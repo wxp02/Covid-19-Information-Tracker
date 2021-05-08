@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang= "en">
+    <title>Covid-19 Information Tracker</title>
+    <head>
+        <link href="../static/main.css" rel="stylesheet">
+    </head>
+        <body>
+            <div class = "container">
+                <h1>Covid-19 Information Tracker</h1>
+                <h4>Please fill in the following information below</h4>
+                <div class="message">
+                    {{text | safe}}
+                </div>
+                <form action="{{url_for('success')}}" method="POST">
+                    <input title="Your first name will be safe with us" placeholder="Enter your first name" type="text" name="fname" required> <br>
+                    <input title="Your last name will be safe with us" placeholder="Enter your last name" type="text" name="lname" required> <br>
+                    <input title="Your email will be safe with us" placeholder="Enter your email address" type="email" name="email_name" required> <br>
+                    <input title="No spaces or dashes" placeholder="Enter your phone number" type="tel" name="phone_number" pattern="[0-9]{10}" required> <br> <br>
+                    <strong>Have you shown any symptoms of Covid-19 (e.g. fever, dry cough, tiredness) in the last 14 days?</strong> <br>
+                    <input type="radio" name="yes_no" value="No" required> No<br>
+                    <input type="radio" name="yes_no" value="Yes" required> Yes<br> <br>
+                    <button type="submit">Submit</button>
+                </form>
+            </div>
+        </body>
+</html>
